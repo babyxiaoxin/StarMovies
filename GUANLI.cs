@@ -3,31 +3,32 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Down : Form
+    public partial class GUANLI : Form
     {
-        public Down()
+        public GUANLI()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            user.Show();
-            this.Hide();
+            Down down = new Down();
+            down.Show();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            GLxiugai glxg = new GLxiugai();
+            glxg.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            GLYUI gLYUI = new GLYUI();
-            gLYUI.Show();
+            Glxinzengdy xz = new Glxinzengdy();
+            xz.Show();
             this.Close();
-
         }
     }
 }

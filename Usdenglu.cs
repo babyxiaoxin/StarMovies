@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -31,28 +24,54 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "admin" && textBox2.Text == "admin")
-            {   //账号正确，跳转下一界面
-                MessageBox.Show("账号密码正确，登录成功！");
-                Dengluchengg dengluchengg = new Dengluchengg();
-                dengluchengg.Show();
+
+            String ssq = string.Format("select Usname,pwd from Uname where Usname='" + textBox1.Text + "'and pwd='" + textBox2.Text + "'");//SQL语句实现表数据的读取
+
+            //判断
+            if (DBHelpr.ChaXun(ssq).HasRows)
+            {
+                MessageBox.Show("登录成功!", "登录提示");
+                Dengluchengg deng = new Dengluchengg();
+                deng.Show();
                 this.Close();
             }
             else if (textBox1.Text == "")
             {
-                MessageBox.Show("请输入账号");
-                textBox1.Text = "";
+                MessageBox.Show("请输入账号！", "登录提示！");
             }
-            else if (textBox2.Text == "") {
-                MessageBox.Show("请输入密码");
-                textBox2.Text = "";
+            else if (textBox2.Text == "")
+            {
+                MessageBox.Show("请输入密码！", "登录提示！");
             }
             else
             {
-                MessageBox.Show("账号或密码不正确，请重新输入");
-                textBox1.Text = "";
-                textBox2.Text = "";
+                DialogResult dr = MessageBox.Show("密码错误是否找回密码？", "登录失败", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)//打开找回密码界面
+                {
+                    ZhaohuiPwd zpd = new ZhaohuiPwd();
+                    zpd.Show();
+                    this.Close();
+                }
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Zhuce zhuce = new Zhuce();
+            zhuce.Show();
+            this.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ZhaohuiPwd zhpwd = new ZhaohuiPwd();
+            zhpwd.Show();
+            this.Close();
         }
     }
 }

@@ -48,8 +48,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBhelper.cs" />
     <Compile Include="Dengluchengg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +89,41 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Glxinzengdy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Glxinzengdy.Designer.cs">
+      <DependentUpon>Glxinzengdy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GLxiugai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GLxiugai.Designer.cs">
+      <DependentUpon>GLxiugai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GLYUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GLYUI.Designer.cs">
+      <DependentUpon>GLYUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUANLI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUANLI.Designer.cs">
+      <DependentUpon>GUANLI.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiuLang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LiuLang.Designer.cs">
       <DependentUpon>LiuLang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LLDQGP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LLDQGP.Designer.cs">
+      <DependentUpon>LLDQGP.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,14 +145,48 @@
     <Compile Include="User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <Compile Include="XiaoFuRen.cs" />
+    <Compile Include="XingQiu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XingQiu.Designer.cs">
+      <DependentUpon>XingQiu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZhaohuiPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZhaohuiPwd.Designer.cs">
+      <DependentUpon>ZhaohuiPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zhuce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zhuce.Designer.cs">
+      <DependentUpon>Zhuce.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dengluchengg.resx">
       <DependentUpon>Dengluchengg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Glxinzengdy.resx">
+      <DependentUpon>Glxinzengdy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GLxiugai.resx">
+      <DependentUpon>GLxiugai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GLYUI.resx">
+      <DependentUpon>GLYUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUANLI.resx">
+      <DependentUpon>GUANLI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LiuLang.resx">
       <DependentUpon>LiuLang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LLDQGP.resx">
+      <DependentUpon>LLDQGP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,6 +196,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Down.resx">
       <DependentUpon>Down.cs</DependentUpon>
@@ -126,6 +207,16 @@
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XingQiu.resx">
+      <DependentUpon>XingQiu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZhaohuiPwd.resx">
+      <DependentUpon>ZhaohuiPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zhuce.resx">
+      <DependentUpon>Zhuce.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,15 +231,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="USershuju.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="USershuju_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>USershuju.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
@@ -159,6 +241,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\星光.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\流浪地球.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\星球大战.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\透明.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.progressBar1.Location = new System.Drawing.Point(360, 648);
+            this.progressBar1.Location = new System.Drawing.Point(320, 643);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(766, 45);
             this.progressBar1.TabIndex = 0;
@@ -46,36 +47,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label1.Font = new System.Drawing.Font("苏新诗卵石体", 35F);
-            this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Location = new System.Drawing.Point(537, 726);
+            this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label1.Font = new System.Drawing.Font("汉仪菱心体简", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.Location = new System.Drawing.Point(560, 728);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 70);
+            this.label1.Size = new System.Drawing.Size(310, 70);
             this.label1.TabIndex = 1;
             this.label1.Text = "点击进入";
+            this.toolTip1.SetToolTip(this.label1, "点击进入主界面");
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("苏新诗卵石体", 40F);
-            this.label2.ForeColor = System.Drawing.Color.IndianRed;
-            this.label2.Location = new System.Drawing.Point(157, 290);
+            this.label2.Font = new System.Drawing.Font("汉仪竹节体简", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(222, 286);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1162, 80);
+            this.label2.Size = new System.Drawing.Size(994, 80);
             this.label2.TabIndex = 2;
             this.label2.Text = "欢迎进入星光电影购票系统";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1615, 855);
+            this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.星光;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1494, 855);
+            this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "星光电影售票系统";
@@ -90,6 +97,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
